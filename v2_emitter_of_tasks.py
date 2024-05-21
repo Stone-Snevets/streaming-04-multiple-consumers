@@ -18,10 +18,8 @@ logging.basicConfig(level=logging.INFO, format = "%(asctime)s - %(level)s - %(me
 def offer_rabbitmq_admin_site():
     """Offer to open the RabbitMQ Admin website"""
     ans = input("Would you like to monitor RabbitMQ queues? y or n ")
-    logging.info()
     if ans.lower() == "y":
         webbrowser.open_new("http://localhost:15672/#/queues")
-        logging.info()
 
 def send_message(host: str, queue_name: str, message: str):
     """
