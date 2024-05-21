@@ -7,37 +7,31 @@ One process will create task messages. Multiple worker processes will share the 
 ### Author: Solomon Stevens
 ### Date: May 24, 2024
 
-## Execute the Producer
+## Steps
 
-1. Run emitter_of_tasks.py (say y to monitor RabbitMQ queues)
+### Execute the Producer
+
+Run emitter_of_tasks.py (say y to monitor RabbitMQ queues if asked)
 
 Explore the RabbitMQ website.
 
-## Execute a Consumer / Worker
+### Execute a Consumer / Worker
 
-1. Run listening_worker.py
+Run listening_worker.py
+* Consumers / Workers shouldn't terminate on their own.
+* You'll have to manually close each one (CTRL + C)
 
-Will it terminate on its own? How do you know? 
+### Ready for Work
 
-## Ready for Work
+Use your emitter_of_tasks.py to produce more task messages.
 
-1. Use your emitter_of_tasks to produce more task messages.
+### Start Another Listening Worker 
 
-## Start Another Listening Worker 
-
-1. Use your listening_worker.py script to launch a second worker. 
-
-Follow the tutorial. 
-Add multiple tasks (e.g. First message, Second message, etc.)
-How are tasks distributed? 
-Monitor the windows with at least two workers. 
-Which worker gets which tasks?
-
+Use your listening_worker.py script to launch a second worker. 
 
 ## Reference
 
 - [RabbitMQ Tutorial - Work Queues](https://www.rabbitmq.com/tutorials/tutorial-two-python.html)
-
 
 ## Screenshot
 
