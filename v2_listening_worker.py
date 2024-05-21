@@ -41,11 +41,9 @@ def main(hn: str = "localhost", qn: str = "task_queue"):
 
     # except, if there's an error, do this
     except Exception as e:
-        logging.info()
         logging.info("ERROR: connection to RabbitMQ server failed.")
         logging.info(f"Verify the server is running on host={hn}.")
         logging.info(f"The error says: {e}")
-        logging.info()
         sys.exit(1)
 
     try:
@@ -81,12 +79,10 @@ def main(hn: str = "localhost", qn: str = "task_queue"):
 
     # except, in the event of an error OR user stops the process, do this
     except Exception as e:
-        logging.info()
         logging.info("ERROR: something went wrong.")
         logging.info(f"The error says: {e}")
         sys.exit(1)
     except KeyboardInterrupt:
-        logging.info()
         logging.info(" User interrupted continuous listening process.")
         sys.exit(0)
     finally:
